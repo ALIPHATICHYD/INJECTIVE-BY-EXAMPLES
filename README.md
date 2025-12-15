@@ -1,23 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Injective Beginner Hub 🚀
 
-## Getting Started
+A simple, fast, and beautiful introduction page for Injective and Ninja Labs.
 
-First, run the development server:
+## Built with
+- **Next.js 14** – React framework
+- **TypeScript** – Type safety
+- **Tailwind CSS** – Beautiful, responsive design
+- **Vercel** – Deployment
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Quick Start
+
+### 1. Clone or copy this project
+```
+git clone <your-repo-url>
+cd injective-beginner-hub
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run locally
+```
+npm run dev
+```
+Visit `http://localhost:3000`
 
+### 4. Build for production
+```
+npm run build
+npm start
+```
+
+## Project Structure
+
+- `/app` – Main pages and layouts
+- `/components` – React components (Hero, Cards, etc.)
+- `/lib` – Data and utilities
+- `/public` – Static assets
+
+## What's Inside
+
+- **Hero Section** – Eye-catching intro
+- **Advantage Cards** – Why Injective is special
+- **Getting Started** – 3-step onboarding
+- **Event Strip** – Community events
+- **Footer** – Links and credits
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
