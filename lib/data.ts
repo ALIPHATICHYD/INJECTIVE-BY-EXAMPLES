@@ -1,8 +1,100 @@
 export const heroData = {
-  title: "Welcome to Injective 🚀",
-  subtitle: "Fast, low-cost DeFi & web3 experiences. Built by the community.",
-  cta: "Get Started",
+  title: "Injective by Examples",
+  subtitle: "Learn Injective through practical examples, tutorials, and real-world use cases. Build fast, low-cost DeFi applications on the Injective blockchain.",
+  cta: "Explore Examples",
 };
+
+export const quickLinks = [
+  {
+    id: 1,
+    icon: "🚀",
+    title: "Getting Started",
+    description: "Quick introduction to Injective blockchain in 60 seconds",
+    link: "/getting-started",
+    duration: "5 min read",
+  },
+  {
+    id: 2,
+    icon: "⚡",
+    title: "Injective in 15 Minutes",
+    description: "Fast-track tutorial for building your first DeFi app",
+    link: "/injective-15min",
+    duration: "15 min read",
+  },
+  {
+    id: 3,
+    icon: "💻",
+    title: "Smart Contract Examples",
+    description: "Learn Move programming with real-world examples",
+    link: "/smart-contracts",
+    duration: "20 min read",
+  },
+  {
+    id: 4,
+    icon: "🔗",
+    title: "Web3 Integration",
+    description: "Connect wallets, interact with contracts, and build dApps",
+    link: "/web3-integration",
+    duration: "25 min read",
+  },
+];
+
+export const tutorials = [
+  {
+    id: 1,
+    category: "Beginner",
+    title: "Set Up Your Development Environment",
+    description: "Install tools and configure your local environment for Injective development.",
+    difficulty: "Easy",
+    time: "10 min",
+    link: "https://docs.injective.network",
+  },
+  {
+    id: 2,
+    category: "Beginner",
+    title: "Create Your First Wallet",
+    description: "Generate a wallet and receive testnet tokens.",
+    difficulty: "Easy",
+    time: "5 min",
+    link: "https://help.keplr.app",
+  },
+  {
+    id: 3,
+    category: "Intermediate",
+    title: "Deploy a Token Contract",
+    description: "Create and deploy a custom token on Injective testnet.",
+    difficulty: "Medium",
+    time: "30 min",
+    link: "https://docs.injective.network",
+  },
+  {
+    id: 4,
+    category: "Intermediate",
+    title: "Build a Trading Bot",
+    description: "Automated trading using Injective's high-speed capabilities.",
+    difficulty: "Medium",
+    time: "45 min",
+    link: "https://docs.injective.network",
+  },
+  {
+    id: 5,
+    category: "Advanced",
+    title: "Complex DeFi Strategies",
+    description: "Implement yield farming, arbitrage, and liquidity provisioning.",
+    difficulty: "Hard",
+    time: "60 min",
+    link: "https://docs.injective.network",
+  },
+  {
+    id: 6,
+    category: "Advanced",
+    title: "Custom Derivatives Protocol",
+    description: "Build a full derivatives trading platform on Injective.",
+    difficulty: "Hard",
+    time: "120 min",
+    link: "https://docs.injective.network",
+  },
+];
 
 export const advantages = [
   {
