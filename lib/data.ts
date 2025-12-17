@@ -10,7 +10,7 @@ export const quickLinks = [
     icon: "🚀",
     title: "Getting Started",
     description: "Quick introduction to Injective blockchain in 60 seconds",
-    link: "/getting-started",
+    link: "/https://docs.injective.network-started",
     duration: "5 min read",
   },
   {
@@ -18,7 +18,7 @@ export const quickLinks = [
     icon: "⚡",
     title: "Injective in 15 Minutes",
     description: "Fast-track tutorial for building your first DeFi app",
-    link: "/injective-15min",
+    link: "https://docs.injective.network/developers/ai/mcp",
     duration: "15 min read",
   },
   {
@@ -26,7 +26,7 @@ export const quickLinks = [
     icon: "💻",
     title: "Smart Contract Examples",
     description: "Learn Move programming with real-world examples",
-    link: "/smart-contracts",
+    link: "https://docs.injective.network/developers-evm/smart-contracts/index",
     duration: "20 min read",
   },
   {
@@ -34,7 +34,7 @@ export const quickLinks = [
     icon: "🔗",
     title: "Web3 Integration",
     description: "Connect wallets, interact with contracts, and build dApps",
-    link: "/web3-integration",
+    link: "https://docs.injective.network/developers-evm/dapps/index",
     duration: "25 min read",
   },
 ];
@@ -47,7 +47,7 @@ export const tutorials = [
     description: "Install tools and configure your local environment for Injective development.",
     difficulty: "Easy",
     time: "10 min",
-    link: "https://docs.injective.network",
+    link: "https://docs.injective.network/developers-evm",
   },
   {
     id: 2,
@@ -65,7 +65,7 @@ export const tutorials = [
     description: "Create and deploy a custom token on Injective testnet.",
     difficulty: "Medium",
     time: "30 min",
-    link: "https://docs.injective.network",
+    link: "https://docs.injective.network/developers-evm/smart-contracts/index",
   },
   {
     id: 4,
@@ -74,7 +74,7 @@ export const tutorials = [
     description: "Automated trading using Injective's high-speed capabilities.",
     difficulty: "Medium",
     time: "45 min",
-    link: "https://docs.injective.network",
+    link: "https://docs.injective.network/developers-defi/injective-trader/index",
   },
   {
     id: 5,
@@ -83,7 +83,7 @@ export const tutorials = [
     description: "Implement yield farming, arbitrage, and liquidity provisioning.",
     difficulty: "Hard",
     time: "60 min",
-    link: "https://docs.injective.network",
+    link: "https://docs.injective.network/developers-defi/index",
   },
   {
     id: 6,
@@ -92,7 +92,7 @@ export const tutorials = [
     description: "Build a full derivatives trading platform on Injective.",
     difficulty: "Hard",
     time: "120 min",
-    link: "https://docs.injective.network",
+    link: "https://docs.injective.network/developers-native/index",
   },
 ];
 
@@ -150,24 +150,24 @@ export const steps = [
 export const events = [
   {
     id: 1,
-    title: "Ninja Labs Weekly AMA",
-    date: "Every Wednesday, 3 PM UTC",
+    title: "Ninja Labs Community",
+    date: "Ongoing",
     type: "Beginner Friendly",
-    link: "https://discord.gg/injective",
+    link: "https://twitter.com/NinjaLabsCN", 
   },
   {
     id: 2,
-    title: "Injective Ecosystem Showcase",
-    date: "December 20",
+    title: "Injective Community",
+    date: "Ongoing",
     type: "Community",
-    link: "https://twitter.com/NinjaLabsCN",
+    link: "https://discord.gg/injective",
   },
   {
     id: 3,
     title: "Builder Workshops",
-    date: "Ongoing",
+    date: "Ongoing till Dec 26th, 2025",
     type: "Developer",
-    link: "https://docs.injective.network",
+    link: "https://luma.com/injective-bootcamp?k=c",
   },
 ];
 
