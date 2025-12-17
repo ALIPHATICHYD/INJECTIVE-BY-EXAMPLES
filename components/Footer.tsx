@@ -168,7 +168,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="text-center">
             <p className="text-slate-500 text-sm">
-              © 2025 Injective by Examples. Built with <span className="text-injective-400">❤️</span> by the Ninja Labs community.
+              © 2025 Injective by Examples. Built with <span className="text-injective-400"></span> by the Injective Africa community.
             </p>
             <p className="text-slate-600 text-xs mt-2">
               Injective is the blockchain built for finance.

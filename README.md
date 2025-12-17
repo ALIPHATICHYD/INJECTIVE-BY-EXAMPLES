@@ -1,12 +1,15 @@
-# Injective Beginner Hub 🚀
+# Injective By Examples` 🚀
 
-A simple, fast, and beautiful introduction page for Injective and Ninja Labs.
+**Injective By Examples** is a modern, professionally-designed documentation and learning platform built to onboard users to the Injective blockchain ecosystem. It features an intuitive dark theme with curated tutorials organized by difficulty level, quick-start guides, community events, and comprehensive resources—all designed with a beautiful, responsive interface that matches the aesthetic of injective.com. Built with Next.js 14, TypeScript, and Tailwind CSS, this hub serves as the gateway for beginners to understand DeFi, learn about Injective's unique features, and connect with the community.
+
 
 ## Built with
+
 - **Next.js 14** – React framework
 - **TypeScript** – Type safety
 - **Tailwind CSS** – Beautiful, responsive design
-- **Vercel** – Deployment
+- **Space Grotesk & Inter Fonts** – Modern typography
+- **react-icons** – Beautiful SVG icons
 
 ## Quick Start
 
