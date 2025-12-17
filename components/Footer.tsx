@@ -40,7 +40,7 @@ export default function Footer() {
                 { label: 'Documentation', url: 'https://docs.injective.network/' },
                 { label: 'GitHub', url: 'https://github.com/InjectiveLabs' },
                 { label: 'Explorer', url: 'https://injscan.com/' },
-                { label: 'Discord Chat', url: 'https://t.me/+Nsy2KjGWtOE5NTY9' },
+                { label: 'Builders Chat', url: 'https://t.me/+Nsy2KjGWtOE5NTY9' },
               ].map((link) => (
                 <li key={link.label}>
                   <a
@@ -95,8 +95,6 @@ export default function Footer() {
               {[
                 { label: 'Blog', url: 'https://injective.com/blog' },
                 { label: 'Press', url: 'https://injective.com/press' },
-                { label: 'Careers', url: 'https://injective.com/careers' },
-                { label: 'Contact', url: 'https://injective.com/contact' },
               ].map((link) => (
                 <li key={link.label}>
                   <a
