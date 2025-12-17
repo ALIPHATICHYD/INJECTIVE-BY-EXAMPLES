@@ -153,7 +153,7 @@ export const events = [
     title: "Ninja Labs Community",
     date: "Ongoing",
     type: "Beginner Friendly",
-    link: "https://twitter.com/NinjaLabsCN", 
+    link: "https://injective.notion.site/ninja-labs-cn", 
   },
   {
     id: 2,

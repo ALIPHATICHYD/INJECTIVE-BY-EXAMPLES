@@ -51,7 +51,7 @@ export default function Hero() {
         {/* Social Links */}
         <div className="mt-16 flex justify-center gap-8" style={{ animationDuration: '0.8s', animationDelay: '0.3s' }}>
           <a 
-            href="https://github.com" 
+            href="https://github.com/InjectiveLabs" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-slate-400 hover:text-injective-400 transition-all flex items-center gap-2 group hover:scale-110"
@@ -71,7 +71,7 @@ export default function Hero() {
             <span className="hidden sm:inline">Discord</span>
           </a>
           <a 
-            href="https://twitter.com/InjectiveLabs" 
+            href="https://x.com/Injective" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-slate-400 hover:text-injective-400 transition-all flex items-center gap-2 group hover:scale-110"
