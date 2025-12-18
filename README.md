@@ -1,4 +1,4 @@
-# Injective By Examples` 🚀
+# Injective By Examples 🚀
 
 **Injective By Examples** is a platform that simplifies onboarding to the Injective blockchain for newcomers. It provides structured learning paths with tutorials categorized by difficulty level, quick-start guides, real-time ecosystem information, and community event tracking which is inspired. So it's basically a  comprehensive gateway to the ecosystem to a developer building on Injective or a user exploring DeFi.
 
