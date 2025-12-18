@@ -11,13 +11,13 @@ const spaceGrotesk = Space_Grotesk({
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Injective Beginner Hub | Ninja Labs',
+  title: 'Injective By Examples | Ninja Labs',
   description: 'Your gateway to Injective: fast DeFi, low fees, and community-driven innovation. Get started in 3 simple steps.',
-  keywords: ['Injective', 'Web3', 'DeFi', 'Ninja Labs', 'Blockchain'],
-  authors: [{ name: 'Adegoke Fuad' }],
-  creator: 'Adegoke Fuad',
+  keywords: ['Injective', 'Web3', 'DeFi', 'Ninja Labs', 'Blockchain', 'Tutorials', 'Guides', 'Smart Contracts', 'dApps', 'Beginner Hub', 'Getting Started', 'Injective By Examples', 'Injective Tutorials', 'Injective Development'],
+  authors: [{ name: 'ALIPHATIC' }],
+  creator: 'ALIPHATIC',
   openGraph: {
-    title: 'Injective Beginner Hub',
+    title: 'Injective By Examples',
     description: 'Your gateway to Injective',
     type: 'website',
   },
