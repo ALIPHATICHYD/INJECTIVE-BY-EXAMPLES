@@ -10,7 +10,7 @@ export const quickLinks = [
     icon: "🚀",
     title: "Getting Started",
     description: "Quick introduction to Injective blockchain in 60 seconds",
-    link: "/https://docs.injective.network-started",
+    link: "https://docs.injective.network/#getting-started",
     duration: "5 min read",
   },
   {
