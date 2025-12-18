@@ -25,7 +25,7 @@ export const quickLinks = [
     id: 3,
     icon: "💻",
     title: "Smart Contract Examples",
-    description: "Learn EVM programming with real-world examples",
+    description: "Learn EVM Smart Contracts with real-world examples",
     link: "https://docs.injective.network/developers-evm/smart-contracts/index",
     duration: "20 min read",
   },
