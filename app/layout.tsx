@@ -13,6 +13,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   title: 'Injective By Examples | Ninja Labs',
   description: 'Your gateway to Injective: fast DeFi, low fees, and community-driven innovation. Get started in 3 simple steps.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   keywords: ['Injective', 'Web3', 'DeFi', 'Ninja Labs', 'Blockchain', 'Tutorials', 'Guides', 'Smart Contracts', 'dApps', 'Beginner Hub', 'Getting Started', 'Injective By Examples', 'Injective Tutorials', 'Injective Development'],
   authors: [{ name: 'ALIPHATIC' }],
   creator: 'ALIPHATIC',
