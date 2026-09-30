@@ -1,85 +1,71 @@
-'use client';
-
-import Image from 'next/image';
 import { FaGithub, FaDiscord, FaXTwitter } from 'react-icons/fa6';
+import { FiArrowRight } from 'react-icons/fi';
+import HeroArt from '@/components/HeroArt';
+import { btnPrimary, btnSecondary, container, emphasis } from '@/components/styles';
 import { heroData } from '@/lib/data';
 
+const SOCIALS = [
+  { label: 'GitHub', href: 'https://github.com/InjectiveLabs', Icon: FaGithub },
+  { label: 'Discord', href: 'https://discord.gg/injective', Icon: FaDiscord },
+  { label: 'X', href: 'https://x.com/Injective', Icon: FaXTwitter },
+];
+
 export default function Hero() {
-  const handleScroll = () => {
-    const section = document.getElementById('quick-links');
-    section?.scrollIntoView({ behavior: 'smooth' });
-  };
+  // "Injective by Examples" sets as "Injective" / "by Examples", with the last word in italic Ocean.
+  const [first, ...rest] = heroData.title.split(' ');
+  const last = rest.pop();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 pt-20 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-injective-600/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-injective-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
+    <section className="relative">
+      <div className={`${container} grid items-center gap-12 pb-16 pt-14 md:pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:pb-24 lg:pt-24`}>
+        <div className="min-w-0">
+          <p className="hero-fade mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 text-[13px] font-medium text-ink-2">
+            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-lime" />
+            Built by the Injective Africa Community
+          </p>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        {/* Injective Logo */}
-        <div className="mb-8 animate-fadeInUp" style={{ animationDuration: '0.8s' }}>
-          <Image
-            src="/injective-logo.jpeg"
-            alt="Injective Logo"
-            width={120}
-            height={120}
-            priority
-            className="mx-auto rounded-lg shadow-lg shadow-injective-600/20 hover:shadow-injective-600/40 transition-all duration-300"
-          />
+          <h1 className="font-display text-[3.5rem] font-normal leading-[0.98] tracking-[-0.025em] text-ink sm:text-7xl lg:text-8xl">
+            <span className="rise-line"><span>{first}</span></span>
+            <span className="rise-line">
+              <span style={{ animationDelay: '0.12s' }}>
+                {rest.join(' ')} <em className={emphasis}>{last}</em>
+              </span>
+            </span>
+          </h1>
+
+          <p className="hero-fade mt-7 max-w-xl text-lg leading-relaxed text-ink-2 md:text-xl" style={{ animationDelay: '0.3s' }}>
+            {heroData.subtitle}
+          </p>
+
+          <div className="hero-fade mt-9 flex flex-wrap gap-3" style={{ animationDelay: '0.42s' }}>
+            <a href="#quick-links" className={btnPrimary}>
+              {heroData.cta}
+              <FiArrowRight aria-hidden="true" className="h-4 w-4" />
+            </a>
+            <a href="#tutorials" className={btnSecondary}>
+              Learning path
+            </a>
+          </div>
+
+          <ul className="hero-fade mt-10 flex flex-wrap gap-x-6 gap-y-3" style={{ animationDelay: '0.54s' }}>
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-ink-3 transition-colors hover:text-ink"
+                >
+                  <Icon aria-hidden="true" className="h-[18px] w-[18px]" />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-injective-400 to-cyan-400" style={{ animationDuration: '0.8s', animationDelay: '0.1s' }}>
-          {heroData.title}
-        </h1>
-
-        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" style={{ animationDuration: '0.8s', animationDelay: '0.2s' }}>
-          {heroData.subtitle}
-        </p>
-
-        <button
-          onClick={handleScroll}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-injective-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-injective-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-injective-600/30 hover:shadow-injective-600/50"
-        >
-          {heroData.cta}
-          <span className="group-hover:translate-x-1 transition-transform">→</span>
-        </button>
-
-        {/* Social Links */}
-        <div className="mt-16 flex justify-center gap-8" style={{ animationDuration: '0.8s', animationDelay: '0.3s' }}>
-          <a 
-            href="https://github.com/InjectiveLabs" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-slate-400 hover:text-injective-400 transition-all flex items-center gap-2 group hover:scale-110"
-            title="GitHub"
-          >
-            <FaGithub className="text-xl group-hover:scale-110 transition-transform" /> 
-            <span className="hidden sm:inline">GitHub</span>
-          </a>
-          <a 
-            href="https://discord.gg/injective" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-slate-400 hover:text-injective-400 transition-all flex items-center gap-2 group hover:scale-110"
-            title="Discord"
-          >
-            <FaDiscord className="text-xl group-hover:scale-110 transition-transform" /> 
-            <span className="hidden sm:inline">Discord</span>
-          </a>
-          <a 
-            href="https://x.com/Injective" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-slate-400 hover:text-injective-400 transition-all flex items-center gap-2 group hover:scale-110"
-            title="Twitter"
-          >
-            <FaXTwitter className="text-xl group-hover:scale-110 transition-transform" /> 
-            <span className="hidden sm:inline">Twitter</span>
-          </a>
+        <div className="mx-auto w-full max-w-[340px] sm:max-w-[400px] lg:max-w-none">
+          <HeroArt />
         </div>
       </div>
     </section>

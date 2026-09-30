@@ -4,6 +4,26 @@ export const heroData = {
   cta: "Explore Examples",
 };
 
+// Topics the tutorials cover, scrolled in the marquee under the hero.
+export const topics = [
+  "Development setup",
+  "Wallets",
+  "EVM smart contracts",
+  "Token contracts",
+  "Trading bots",
+  "DeFi strategies",
+  "Derivatives",
+  "Web3 integration",
+];
+
+// Figures as published on injective.com ("Injective by the Numbers"). `count` figures roll up once in view.
+export const networkStats: { label: string; text?: string; count?: { value: number; decimals?: number; suffix?: string } }[] = [
+  { label: "Block time", count: { value: 0.59, decimals: 2, suffix: "s" } },
+  { label: "Median transaction cost", text: "$0.0001" },
+  { label: "Onchain transactions", count: { value: 3, decimals: 2, suffix: "B" } },
+  { label: "Onchain assets", count: { value: 500, suffix: "+" } },
+];
+
 export const quickLinks = [
   {
     id: 1,

@@ -5,6 +5,9 @@
 ## What's Inside
 
 - **Hero Section** – Eye-catching intro
+- **Topics Marquee** – What the tutorials cover
+- **Quick Start & Learning Path** – Guides and tutorials by difficulty
+- **Network Stats** – Injective's published figures
 - **Advantage Cards** – Why Injective is special
 - **Getting Started** – 3-step onboarding
 - **Event Strip** – Community events
@@ -15,5 +18,5 @@
 - **Next.js 14** – React framework
 - **TypeScript** – Type safety
 - **Tailwind CSS** – Beautiful, responsive design
-- **Space Grotesk & Inter Fonts** – Modern typography
+- **Newsreader, Figtree & Geist Mono** – Free stand-ins for Injective's brand fonts (ABC Marist and TT Commons)
 - **react-icons** – Beautiful SVG icons
