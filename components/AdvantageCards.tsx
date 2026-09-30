@@ -1,63 +1,40 @@
-'use client';
-
-import { FaBolt, FaCoins, FaUsers } from 'react-icons/fa6';
+import { FaBolt, FaCoins, FaUsers, FaWrench } from 'react-icons/fa6';
+import Reveal from '@/components/Reveal';
+import SectionHeader from '@/components/SectionHeader';
+import { container, emphasis, iconChip } from '@/components/styles';
 import { advantages } from '@/lib/data';
 
 const iconMap: Record<string, React.ReactNode> = {
-  '⚡': <FaBolt className="w-8 h-8" />,
-  '💰': <FaCoins className="w-8 h-8" />,
-//   '🔧': <FaTools className="w-8 h-8" />,
-  '🥷': <FaUsers className="w-8 h-8" />,
+  '⚡': <FaBolt className="h-5 w-5" />,
+  '💰': <FaCoins className="h-5 w-5" />,
+  '🔧': <FaWrench className="h-5 w-5" />,
+  '🥷': <FaUsers className="h-5 w-5" />,
 };
 
 export default function AdvantageCards() {
   return (
-    <section
-      id="advantages"
-      className="py-20 px-4 bg-slate-800/50"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            What Makes Injective <span className="text-transparent bg-clip-text bg-gradient-to-r from-injective-400 to-cyan-400">Special</span>
-          </h2>
-          <p className="text-slate-300 max-w-2xl mx-auto text-lg">
-            Built for speed, scalability, and the future of decentralized finance
-          </p>
-        </div>
+    <section id="advantages" className="scroll-mt-20 py-20 md:py-28">
+      <div className={`${container} grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16`}>
+        <Reveal>
+          <div className="lg:sticky lg:top-28">
+            <SectionHeader
+              title={<>What Makes Injective <em className={emphasis}>Special</em></>}
+              lede="Built for speed, scalability, and the future of decentralized finance"
+            />
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {advantages.map((advantage, index) => (
-            <div
-              key={advantage.id}
-              className="group relative p-6 rounded-lg border transition-all duration-500 hover:shadow-2xl hover:shadow-injective-600/20 hover:-translate-y-2"
-              style={{
-                background: index % 2 === 0
-                  ? 'linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%)'
-                  : 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%)',
-                border: '1px solid ' + (index % 2 === 0 ? 'rgba(2, 132, 199, 0.3)' : 'rgba(100, 116, 139, 0.3)'),
-              }}
-            >
-              <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{
-                  background: 'radial-gradient(circle at top left, rgba(2, 132, 199, 0.1), transparent)',
-                  pointerEvents: 'none',
-                }}></div>
-
-              <div className="relative z-10">
-                <div className="text-injective-400 mb-4 group-hover:scale-125 transition-transform duration-300">
-                  {iconMap[advantage.icon] || advantage.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-injective-300 transition-colors">
-                  {advantage.title}
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  {advantage.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Reveal>
+          <ul className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+            {advantages.map((advantage) => (
+              <li key={advantage.id} className="bg-surface p-6 transition-colors duration-300 hover:bg-surface-hover md:p-8">
+                <span className={iconChip}>{iconMap[advantage.icon] ?? advantage.icon}</span>
+                <h3 className="mt-6 font-display text-2xl leading-tight text-ink">{advantage.title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink-2">{advantage.description}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );
