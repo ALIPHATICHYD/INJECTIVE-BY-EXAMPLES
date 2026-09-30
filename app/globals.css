@@ -2,133 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/*
+ * Same system as NinjaPay, following Injective's brand (injective.com/brand): black page,
+ * Space Gray #121212 cards, Ocean #4d3dff for actions only, Snow #eeefff text. Dark only,
+ * like injective.com. Tailwind names for these live in tailwind.config.ts.
+ */
+:root {
+  color-scheme: dark;
+  --bg-primary: #000000;
+  --text-primary: #eeefff;
+  --accent: #4d3dff;
+  --accent-text: #a59cff;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: rgba(77, 61, 255, 0.35);
+    color: var(--text-primary);
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: #3d3d4a; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #8b8ca3; }
+
+  code {
+    @apply rounded bg-surface px-1.5 py-0.5 font-mono text-sm text-ink;
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
+/* ─── Hero ─── */
+/* Headline lines rise from behind their own mask; lead copy fades up after them. CSS only, so first paint never waits on JS. */
+.rise-line { display: block; overflow: hidden; padding: 0 0.1em 0.06em 0; margin-bottom: -0.06em; }
+.rise-line > span { display: inline-block; animation: rise-in 1s var(--ease-out-expo) both; }
+.hero-fade { animation: fade-up 1s var(--ease-out-expo) both; }
+
+.hero-bloom {
+  background: radial-gradient(closest-side, rgba(77, 61, 255, 0.6), rgba(77, 61, 255, 0.2) 58%, rgba(77, 61, 255, 0) 78%);
+  filter: blur(18px);
+  animation: bloom-in 1.4s var(--ease-out-expo) 0.1s both, hero-breathe 9s ease-in-out 1.5s infinite alternate;
+}
+.hero-tile { animation: tile-in 1.2s var(--ease-out-expo) 0.2s both; }
+.hero-tile > * { animation: tile-float 7s ease-in-out 1.4s infinite alternate; }
+.hero-orbit { animation: fade-up 1s var(--ease-out-expo) 0.6s both; }
+
+/* ─── Marquee ─── */
+.marquee-track { animation: marquee 42s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* ─── Scroll reveal (components/Reveal.tsx adds .is-hidden only to content still below the fold) ─── */
+.reveal { transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo); }
+.reveal.is-hidden { opacity: 0; transform: translateY(20px); }
+
+/* Horizontal card rows on phones: swipe, no visible scrollbar. */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@keyframes rise-in { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes bloom-in { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
+@keyframes hero-breathe { from { transform: scale(1); opacity: 1; } to { transform: scale(1.08); opacity: 0.78; } }
+@keyframes tile-in { from { opacity: 0; transform: translateY(18px) scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes tile-float { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ─── Reduced motion: every moving part rests in its final frame ─── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  .marquee-track, .hero-tile > *, .hero-bloom { animation: none; }
+  .reveal.is-hidden { opacity: 1; transform: none; }
 }
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-  color: #e2e8f0;
-  font-family: var(--font-space-grotesk), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  min-height: 100vh;
-}
-
-/* Heading styles with Space Grotesk */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.75px;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.25px;
-}
-
-/* Button and interactive text with Space Grotesk */
-button, [role="button"], .btn {
-  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
-  font-weight: 600;
-}
-
-/* Body text with Inter */
-p, span, li {
-  font-family: var(--font-inter), 'Inter', sans-serif;
-  font-weight: 400;
-}
-
-/* Smooth transitions */
-a {
-  @apply transition-colors duration-300;
-}
-
-a:hover {
-  @apply text-cyan-400;
-}
-
-/* Modern scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1e293b;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #0284c7;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  @apply font-semibold text-gray-900;
-}
-
-/* Code blocks */
-code {
-  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded font-mono text-sm;
-}
-
-pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-auto;
-}
-
-
-

@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss'
 
+// Colours follow Injective's brand (injective.com/brand), matching NinjaPay: black page,
+// Space Gray cards, Ocean for actions only, Snow text. Lime, Lemon and Coral carry state only.
 const config: Config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,58 +10,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        injective: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c3d66',
-          950: '#051e3e',
-          dark: '#0a2540',
-          blue: '#0284c7',
-          light: '#38bdf8',
-          accent: '#06b6d4',
+        page: '#000000',
+        'page-2': '#0a0a0c',
+        surface: '#121212', // Space Gray
+        'surface-hover': '#1b1b22',
+        line: '#26262e',
+        'line-strong': '#3d3d4a',
+        ink: '#eeefff', // Snow, 16.4:1 on Space Gray
+        'ink-2': '#b3b4c8', // 9.2:1 on Space Gray
+        'ink-3': '#8b8ca3', // 5.7:1 on Space Gray
+        snow: '#eeefff',
+        ocean: {
+          DEFAULT: '#4d3dff',
+          hover: '#3a2be0', // darker, so Snow labels stay above AA
+          text: '#a59cff', // Ocean lifted for text: Ocean itself is 3.1:1 on Space Gray
         },
-        ninja: {
-          black: '#1a1a1a',
-          gold: '#fbbf24',
-        },
-        mint: {
-          50: '#f0fdfa',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          500: '#10b981',
-          600: '#059669',
-        },
+        lime: '#ceffc8',
+        lemon: '#e8ff5f',
+        coral: '#ffa36e',
       },
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', '"Space Grotesk"', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', '"Space Grotesk"', 'sans-serif'],
-        body: ['var(--font-inter)', '"Inter"', 'sans-serif'],
-        mono: ['"Fira Code"', '"Monaco"', 'monospace'],
+        sans: ['var(--font-ui-face)', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
+        display: ['var(--font-display-face)', '"Iowan Old Style"', '"Palatino Linotype"', 'Georgia', 'serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', '"SF Mono"', 'Menlo', 'monospace'],
       },
-      fontSize: {
-        xs: ['0.75rem', { lineHeight: '1rem' }],
-        sm: ['0.875rem', { lineHeight: '1.25rem' }],
-        base: ['1rem', { lineHeight: '1.5rem' }],
-        lg: ['1.125rem', { lineHeight: '1.75rem' }],
-        xl: ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1.2' }],
-      },
-      backgroundImage: {
-        'gradient-to-br': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
     },
   },
   plugins: [],
 }
 export default config
-
